@@ -10,5 +10,9 @@ document.getElementById('calculate').addEventListener('click', function(event){
     const balance = income - totalExpenses;
     // total Expenses 
     const totalExpensesValue = document.getElementById('total-expenses');
-    totalExpensesValue.innerText = totalExpenses;
+    totalExpensesValue.innerText = totalExpenses.toFixed(4);
+
+    // Balance total 
+    const balanceValue = document.getElementById('balance');
+    balanceValue.innerText = balance.toFixed(4);
 })
