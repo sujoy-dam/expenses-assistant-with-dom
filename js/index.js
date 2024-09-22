@@ -6,6 +6,9 @@ document.getElementById('calculate').addEventListener('click', function(event){
     const courses = getInputValueById('courses');
     const internet = getInputValueById('internet');
     console.log(income, software, courses, internet);
-    const totalExpenses = software + courses+ income;
+    const totalExpenses = software + courses+ internet;
     const balance = income - totalExpenses;
+    // total Expenses 
+    const totalExpensesValue = document.getElementById('total-expenses');
+    totalExpensesValue.innerText = totalExpenses;
 })
