@@ -18,8 +18,23 @@ document.getElementById('calculate').addEventListener('click', function (event) 
 
     const result = document.getElementById('results');
     result.classList.remove('hidden')
-})
 
+
+
+    const historyContainer = document.getElementById('history-list')
+    const div = document.createElement('div');
+    div.className = "bg-white p-3 rounded-md border-l-2 border-indigo-600"
+    div.innerHTML = `
+    <p class ="text-sx text-gray-600">${new Date().toLocaleDateString()}</p>
+    <p class ="text-sx text-gray-600">Income: ${income}</p>
+    <p class ="text-sx text-gray-600">Total Expenses: ${totalExpenses}</p>
+    <p class ="text-sx text-gray-600">Balance: ${balance}</p>
+    `
+    historyContainer.insertBefore(div, historyContainer.firstChild);
+    
+    
+})
+// clculate savings button 
 document.getElementById('calculate-savings').addEventListener('click', function (event) {
     event.preventDefault();
     const income = getInputValueById('income');
@@ -50,6 +65,9 @@ document.getElementById('history-tab').addEventListener('click', function(){
 
     const expensesForm = document.getElementById('expense-form');
     expensesForm.classList.add('hidden')
+
+    const historySection = document.getElementById('history-section')
+    historySection.classList.remove('hidden')
 })
 
 // assistance button 
